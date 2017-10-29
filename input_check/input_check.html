@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Vue Input Check</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <!--<script src="https://cdn.jsdelivr.net/vue/2.3.0/vue.min.js"></script>-->
+  </head>
+  <body>
+    <main id="app">
+      <h1>Vueでシンプルな入力制限</h1>
+      <table>
+        <tbody>
+          <tr>
+            <th>数字のみ:</th>
+            <td>
+              <input type="text" pattern="^[0-9]*" maxlength="10" :value="test1" @input="test1=$event.target.value=opt($event)">
+            </td>
+          </tr>
+          <tr>
+            <th>アルファベットのみ:</th>
+            <td>
+              <input type="text" pattern="^[a-zA-Z]*" maxlength="10" :value="test2" @input="test2=$event.target.value=opt($event)">
+            </td>
+          </tr>
+          <tr>
+            <th>数字アルファベット一部記号[-_]のみ:</th>
+            <td>
+              <input type="text" pattern="^[a-zA-Z0-9-_]*" maxlength="20" :value="test3" @input="test3=$event.target.value=opt($event)">
+            </td>
+          </tr>
+          <tr>
+            <th>URL:</th>
+            <td>
+              <input type="text" pattern="^(https?://[\w/:%#\$&\?\(\)~\.=\+\-]*|https?:/|https?:|https?|htt|ht|h)" maxlength="100" :value="test4" @input="test4=$event.target.value=opt($event)">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        test1:{{test1}} <br>
+        test2:{{test2}} <br>
+        test3:{{test3}} <br>
+        test4:{{test4}} <br>
+      </div>
+    </main>    
+    <script src="input_check.js"></script>
+  </body>
+</html>
+
+
