@@ -1,0 +1,61 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h0,h2,h3,h4,h5,h6,header,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;vertical-align:baseline}*{box-sizing:border-box}body{padding:10px}h1{margin-bottom:50px}#specification{border-radius:5px;border:1px solid #ccc;padding:10px;margin-top:50px}
+body {
+  background: #111;
+  background-size: .2em 100%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin: 0;
+}
+h1{
+  text-align: center;
+  color: #256073;
+  margin: 20px 0;
+}
+.lightout{
+  display: flex;
+  flex-wrap: wrap;
+  width: 260px;
+  margin: 0 auto;
+}
+.lightout .box{
+  margin: 1px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+.on{
+  /* box-shadow */
+  box-shadow:0px 0px 20px 4px #fff0ba inset;
+  -moz-box-shadow:0px 0px 20px 4px #fff0ba inset;
+  -webkit-box-shadow:0px 0px 20px 4px #fff0ba inset;
+
+  /* border-radius */
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+
+  /* border */
+  border:1px solid #fff500;
+}
+.off{
+  /* box-shadow */
+  box-shadow:0px 0px 20px 4px #2a4171 inset;
+  -moz-box-shadow:0px 0px 20px 4px #2a4171 inset;
+  -webkit-box-shadow:0px 0px 20px 4px #2a4171 inset;
+
+  /* border-radius */
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+
+  /* border */
+  border:1px solid #1a5682;
+}
+.target{
+  border: 1px solid #98aeff;
+}
+.clear{
+  color: red;
+  text-align: center;
+}

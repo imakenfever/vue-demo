@@ -1,0 +1,35 @@
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+	<link rel="stylesheet" href="xxx.css">
+</head>
+
+<body>
+	<div id="app" class="container">
+		<h2>{{ title }}</h2>
+
+		<div class="input-group">
+			<!-- 入力フォーム -->
+			<input v-model="newItem" v-on:keyup.enter="addItem" placeholder="add your task" type="text" class="form-control">
+			<!-- Addボタン -->
+			<span class="input-group-btn">
+				<button v-on:click="addItem" class="btn btn-default" type="button">Add!</button>
+			</span>
+		</div>
+
+		<ul style="list-style:none;">
+			<!-- 追加アイテムリスト -->
+			<li v-for="(item, index) in items" v-bind:class="{ 'removed': item.checked }">
+				<div class="checkbox">
+					<!-- チェックボックス -->
+					<input type="checkbox" v-model="item.checked"> {{index}} : {{ item.text }}
+					<!-- DELETEボタン -->
+					<button v-on:click="deleteItem(index)" class="button button-clear" type="button">Delete</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+	<script src="app.js"></script>
+
+</body>

@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// Vueインスタンス作成
+// - el
+// - data
+// - methods
 var vue = new Vue({
     el:'#app',
-    data:{
+    data:{ // データオブジェクト
         test1:'',
         test2:'',
         test3:'',

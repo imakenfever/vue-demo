@@ -3,20 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// select-itemコンポーネントの定義
+// - props
+// - template
 Vue.component('select-item', {
   props: ['url', 'index', 'drop_method'],
   template: '<img v-bind:src="url" @dragover.prevent @drop="drop_method(index)" width="100px" height="100px"/>'
 })
 
+// image-itemコンポーネントの定義
+// - props
+// - template
 Vue.component('image-item', {
   props: ['url', 'dragstart_method'],
   template: '<img v-bind:src="url" draggable="true" @dragstart="dragstart_method(url)" width="100px" height="100px"/>'
 })
 
+// Vueインスタンス作成
+// - el
+// - components
+// - data
+// - methods
 new Vue({
   el: '#root',
   components: ['image-item', 'select-item'],
-  data: {
+  data: { // データオブジェクト
     url_list: [
       'https://jp.vuejs.org/images/logo.png',
       'http://2.bp.blogspot.com/-h_6vJqWz5KE/VaMNnYX1izI/AAAAAAAAvag/LfS62MKrhKE/s800/man_58.png',

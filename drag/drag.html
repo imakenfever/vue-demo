@@ -14,9 +14,11 @@ and open the template in the editor.
   <body>
     <div id="root">
       <div>
+        <!-- "index" "url" "dragstart_method" は変数、関数名 -->
         <image-item v-for="(url, index) in url_list" v-bind:key="index" v-bind:url="url" v-bind:dragstart_method="dragstart_method"></image-item>
         <br>
         <h2>Select</h2>
+        <!-- "index" "url" "drop_method" は変数、関数名 -->
         <select-item v-for="(url, index) in selected_url_list" v-bind:key="index" v-bind:url="url" v-bind:index="index" v-bind:drop_method="drop_method"></select-item>
       </div>
     </div>

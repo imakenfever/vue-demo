@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 入力ボックス -->
+    <h2>[Input Form]</h2>
+    <div class="input-group">
+      {{testVal}}
+      <input type="text" v-model="text" v-on:keyup.enter="printSample">
+      <br/>
+      <button v-on:click="printSample">reset</button>
+      Input: {{text}}
+      <br/>
+    </div>
+    <hr>
+    <!-- ボタンクリックイベント -->
+    <div>
+      <h2>[Button Click Event]</h2>
+      <h4>{{ msg }}</h4>
+      <button type="button" @click="change">change</button>
+    </div>
+    <hr>
+    <!-- AND検索 -->
+    <div>
+      <h2>[AND Search]</h2>>
+      <input type="text" v-model="searchQuery">
+      <ul>
+        <li v-for="l in filteredView">
+          <h2>{{l.id}}</h2>
+          <p>{{l.description}}</p>
+        </li>
+      </ul>
+      <div v-show="filteredView.length==0">
+        no result
+      </div>
+    </div>
+    <hr>
+    <!-- My Apple -->
+    <div>
+      <h2>[My Apple]</h2>
+      <ul>
+        <my-apple></my-apple>
+      </ul>
+    </div>
+    <hr>
+    <!-- My Animals -->
+    <div>
+      <h2>[My Animals]</h2>
+      <ul>
+        <my-animals v-for="animal in animals" :receive="animal"></my-animals>
+      </ul>
+      <ul>
+        <li v-for="animal in animals">{{ animal.name }}</li>
+      </ul>
+    </div>
+    <!-- Table -->
+    <div>
+      <h2>[Table]</h2>
+      <table>
+        <thead>
+          <tr>
+            <th v-for="(value, key) in columns">
+              {{ value }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="task in tasks">
+            <td v-for="(value, key) in columns">
+              {{ task[key] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Image -->
+    <div>
+      <h2>[Image]</h2>
+      <img v-bind:src.literal="imageSrc">
+    </div>
+    <!-- Counter -->
+    <div>
+      <h2>[Counter]</h2>
+      <button type="button" @click="counter">Count</button>
+      {{cnt}}
+    </div>
+    <!-- Todo -->
+    <div>
+      <h2>[Todo]</h2>
+      <form>
+        <input type="text" v-model="newTodo">
+        <button type="button" @click="addTodo">Add</button>
+      </form>
+      <ul>
+        <li v-for="todo in todos">
+          {{todo}}
+          <button type="button" @click="deleteTodo(todo)">Del</button>
+        </li>
+      </ul>
+    </div>
+    <!-- JSON -->
+    <!-- <div>
+      <h2>[JSON]</h2>
+      <div v-else v-for="info in infos">
+        {{info}}
+      </div>
+    </div> -->
+  </div>
+  <script src=" https://unpkg.com/vue/dist/vue.js "></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script> -->
+  <script src="app.js " charset="UTF-8"></script>
+</body>
