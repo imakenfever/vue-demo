@@ -47,7 +47,12 @@ var data = {
       date: '2016-12-03'
     }
   ],
-  imageSrc: 'assets/logo.png'
+  imageSrc: 'assets/logo.png',
+  orderItems: [
+    { name: 'おすすめ順', value: 'recommend' },
+    { name: '費用安い順', value: 'lowinitial' },
+    { name: '近い順', value: 'nearly' }
+  ]
 };
 
 Vue.component('my-apple', {
